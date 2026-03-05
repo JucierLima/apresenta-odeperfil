@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>JSONPlaceholder API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>JSONPlaceholder API</h1>
+        <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+    </header>
+
+    <main>
+        <section class="users-section">
+            <h2>Lista de Usuários</h2>
+            <div class="controls">
+                <button id="loadUsers">Carregar Usuários</button>
+                <input type="text" id="searchInput" placeholder="🔍 Buscar por nome, email ou cidade...">
+            </div>
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+            </div>
+            <div id="cacheInfo" class="cache-info hidden"></div>
+            <div id="usersContainer" class="users-container"></div>
+            <div id="pagination" class="pagination hidden"></div>
+        </section>
+
+        <section class="user-form-section">
+            <h2>Criar Novo Usuário</h2>
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="userName">Nome:</label>
+                    <input type="text" id="userName" required minlength="3">
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email:</label>
+                    <input type="email" id="userEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="userCity">Cidade:</label>
+                    <input type="text" id="userCity" required minlength="2">
+                </div>
+                <button type="submit">Criar Usuário</button>
+            </form>
+            <div id="userResult" class="result"></div>
+        </section>
+
+        <section class="post-section">
+            <h2>Criar Novo Post</h2>
+            <form id="postForm">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" required minlength="3">
+                </div>
+                <div class="form-group">
+                    <label for="body">Conteúdo:</label>
+                    <textarea id="body" required minlength="10" rows="4"></textarea>
+                </div>
+                <button type="submit">Criar Post</button>
+            </form>
+            <div id="postResult" class="result"></div>
+        </section>
+
+        <section class="info-section">
+            <h2>Informações da Requisição</h2>
+            <div id="requestInfo" class="request-info"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JSONPlaceholder API Demo</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
